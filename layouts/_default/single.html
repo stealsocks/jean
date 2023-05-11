@@ -1,0 +1,20 @@
+{{ define "main" }}
+<main>
+    <arcticle>
+<h1> {{ .Title }} </h1>
+
+<div class=coffee>
+    <img class=stain src="/photos/coffee.svg">
+  <img class=doodle src="/photos/{{ .Params.image }}">
+</div>
+<p style="font-style: italic; margin-bottom: 3rem"> {{ .Description }} </p>
+<hr>
+<br>
+<br>
+
+{{ replace .Content "disabled" "" | safeHTML }}
+    
+</arcticle>
+</main>
+{{ end }}
+

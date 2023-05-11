@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+  <title> jean </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+    body{
+/*      background: #f6f3ea;*/
+      background: linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.3)),  url("/photos/bg.png");
+      text-align: center;
+    }
+
+    h1{
+      font-family: monospace;
+      font-size: 3rem;
+      padding: 2rem;
+      color: #444;
+      text-shadow: 0px 0px 2px grey;
+    }
+
+    .flour{
+      position: absolute;
+      width: 50%;
+      opacity: 0.8;
+      right: 0px;
+      top: 8vh;
+    }
+
+    img{
+      width: 100%;
+      margin: 1rem 0rem 0rem 0rem;
+      border-radius: 3px;
+    }
+
+    .note{
+      width: 250px;
+      box-shadow: 0px 1px 3px grey;
+      border-radius: 6px;
+      display: inline-block;
+      margin: 30px;
+      padding: 20px;
+      box-sizing: border-box;
+      background: white;
+      vertical-align: top;
+      position: relative;
+      font-family: Monaco, monospace;
+      text-align: left;
+    }
+
+    .note img{
+      transition: 0.3s all ease;
+    }
+
+    .note img:hover{
+      opacity: 0.7;
+    }
+
+    p{
+      font-size: 0.8rem;
+      color: #333;
+      font-family: courier;
+      margin: 1rem 0px 0.1rem 0px;
+      line-height: 1.4em;
+    }
+
+    .note .text{
+      font-size: 1rem;
+      text-decoration: underline;
+      text-decoration-color: lightgrey;
+      color: black;
+      text-underline-offset: 4px;
+      text-decoration-thickness: 1px;
+    }
+
+    .note .text:hover{
+/*      background: #FDF3EA;*/
+      font-style: italic;
+      font-weight: 900;
+      text-shadow: 0px 0px 1px black;
+    }
+
+    /*.note img{
+      border: solid 0.5px lightgrey;
+    }*/
+
+    .time{
+      position: absolute;
+      display: inline-block;
+      bottom: 20px;
+      right: 20px;
+      font-family: Menlo, monospace;
+      font-size: 14px;
+    }
+
+    .cat-1{
+      background: lightblue;
+    }
+
+    .spill{
+      position: absolute;
+      width: 300px;
+      opacity: 0.5;
+    }
+
+    .columns{
+      column-count: 4;
+      max-width: 75rem;
+      display: inline-block;
+    }
+
+    @media screen and (max-width: 1200px) {
+
+      .columns{
+      column-count: 3;
+      max-width: 75rem;
+      display: inline-block;
+      padding: 1rem;
+    }
+
+    .note{
+      width: 90%;
+      margin: 5%;
+    }
+
+    }
+
+    @media screen and (max-width: 700px) {
+
+      .columns{
+      column-count: 1;
+      max-width: 75rem;
+      display: inline-block;
+    }
+
+    .note{
+      width: 90%;
+      margin: 5%;
+    }
+
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <h1> Jean's Recipe Book </h1>
+
+  <div class=flour>
+    <img src="/photos/sprinkle.png">
+  </div>
+
+<div class=columns> 
+{{ range where .Site.RegularPages "Type" "recipes" }}
+
+<div class="note"> 
+<a class="text" href="{{ .Permalink }}"> {{ .Title }} </a> <br>
+
+<a href="{{ .Permalink }}"><img src="/photos/{{ .Params.image }}"></a>
+
+<p> {{ .Description }} </p>
+
+<!-- <div class=time> {{ .Params.time }} min.</div> -->
+</div>
+{{ end }}
+
+</div>
+
+
+<div class=spill>
+    <img src="/photos/coffee-spill.png">
+</div>
+
+
+</body>
+</html>

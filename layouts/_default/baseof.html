@@ -1,0 +1,212 @@
+<html>
+<head>
+  <title> oops </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Syne+Mono&display=swap');
+
+
+    body{
+      text-align: center;
+       background: #f6f3ea;
+       background: linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.3)),  url("/photos/bg.png");
+       font-family: Courier New, monospace;
+    }
+
+    main{
+      max-width: 40rem;
+      display: inline-block;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1.6em;
+      text-align: left;
+      margin-top: 4rem;
+      color: #333;
+      width: 95%;
+    }
+
+    a{
+      color: black;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    a:hover{
+      font-style: italic;
+    }
+
+    h1{
+      font-weight: 900;
+      font-family: Syne Mono, Courier, monospace;;
+      color: #333;
+      margin-bottom: 1.4em;
+      font-size: 3rem;
+      line-height: 1.3em;
+    }
+
+    li:has(input){
+      list-style-type:none
+    }
+
+    .photo{
+      position: relative;
+    }
+
+    figure{
+      background: white;
+      box-shadow: 0px 0px 2px lightgray;
+      transform: rotate(-3deg);
+      margin: 2rem 0rem 3rem 0rem;
+      padding: 20px 20px 16px 20px;
+      width: calc(60% - 40px);
+      display: inline-block;
+    }
+
+    figcaption{
+      font-family: Caveat;
+      margin-top: 14px;
+      font-size: 18px;
+      text-align: right;
+      padding-right: 2px;
+    }
+
+    img{
+      width: 100%;
+      height: auto;
+    }
+
+    p{
+      margin: 0rem 0rem 1.2rem 0rem;
+    }
+
+    .spill img{
+      width: 100%;
+      height: auto;
+      padding: 0px;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .flour{
+      position: absolute;
+      width: 300px;
+      opacity: 0.8;
+      right: -20px;
+      top: -60px;
+    }
+
+    .tips{
+      display: inline-block;
+      width: 35%;
+      margin-left: 2%;
+      font-size: 14px;
+      line-height: 1.4em;
+      font-style: italic;
+    }
+
+    li{
+      margin-top: 1rem
+    }
+
+    .tips li::marker {
+    content: '• ';
+    }
+
+    footer{
+      margin-top: 2rem;
+      display: none;
+    }
+
+    footer a{
+      padding: 0px 2rem;
+    }
+
+    .ingredients{
+      width: calc(50% - 80px);
+      text-align: justify;
+      margin-bottom: 0.5rem;
+      margin-right: 2rem;
+      padding: 0px 30px 30px 30px;
+      box-shadow: 0px 0px 5px lightgray;
+      background: white;
+      font-family: monospace;
+      border-radius: 5px;
+      float: left;
+    }
+
+    .ingredients h3{
+      margin-top: 30px;
+    }
+
+    .ingredients li{
+        margin-top: 0.5rem;
+    }
+
+    .ingredients ul{
+      padding-left: 0px;
+    }
+
+    .stain{
+      width: 60%;
+      opacity: 0.5;
+      position: absolute;
+      margin-left: 70%;
+      bottom: -160px;
+    }
+
+    .doodle {
+      width: calc(100% - 20px);
+      padding: 10px;
+      background: white;
+      box-shadow: 0px 0px 5px lightgray;
+    }
+
+    .coffee {
+      width: 100%;
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+
+    li:has(input[type="checkbox"]:checked) {
+      text-decoration: line-through
+    }
+
+    @media screen and (max-width: 800px) {
+
+      body{
+        margin: 0px;
+        padding-bottom: 4rem;
+      }
+
+      main{
+        max-width: 90%;
+        padding: 0% 5%;
+        margin-top: 0rem;
+        overflow: hidden;
+      }
+
+      .ingredients{
+        width: calc(100% - 4rem);
+        margin-bottom: 1.5rem;
+      }
+
+      figure{
+        width: calc(100% - 80px);
+        margin-left: 20px;
+      }
+
+      .tips{
+        width: 95%;
+      }
+    }
+
+
+  </style>
+</head>
+<body>
+  {{ block "main" .}}
+  {{ end }}
+
+{{ partial "footer.html" . }}
+</body>
+</html>
